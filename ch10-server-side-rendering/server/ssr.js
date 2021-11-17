@@ -8,7 +8,7 @@ import App from '../src/App';
 
 const app = express();
 
-app.get(/\.(js|css|map|ico|svg|png)$/, express.static(path.resolve(__dirname, '../build')));
+app.get(/\.(js|css|map|ico|svg|png|json)$/, express.static(path.resolve(__dirname, '../build')));
 
 app.use('*', async (req, res) => {
     let componentData = {};
@@ -23,7 +23,7 @@ app.use('*', async (req, res) => {
         </StaticRouter>
     );
 
-    indexHTML = indexHTML.replace('<div id="root"></div>', `<div id="app">${appHTML}</div>`);
+    indexHTML = indexHTML.replace('<div id="root"></div>', `<div id="root">${appHTML}</div>`);
 
     indexHTML = indexHTML.replace(
         'var initial_state = null;',
