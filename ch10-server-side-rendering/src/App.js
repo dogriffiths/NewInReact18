@@ -1,11 +1,15 @@
 // import logo from './logo.svg'; <-- Do not do this. Just refer to the image in IMG
 import './App.css';
-import MyComponent from "./MyComponent";
+import {Suspense, lazy} from "react";
+// import MyComponent from "./MyComponent";
+const MyComponent = lazy(() => import("./MyComponent"));
 
 function App() {
   return (
     <div className="App">
-        <MyComponent/>
+        <Suspense fallback={<div>Loading...</div>}>
+            <MyComponent/>
+        </Suspense>
       <header className="App-header">
         <img src='./logo.svg' className="App-logo" alt="logo" />
         <p>
