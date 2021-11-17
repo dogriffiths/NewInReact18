@@ -1,0 +1,1 @@
+{"version":3,"sources":["MyComponent.js"],"names":["MyComponent"],"mappings":"6GAEeA,UAFK,kBAAM","file":"static/js/3.b9d7f08e.chunk.js","sourcesContent":["const MyComponent = () => <div>Dynamically loaded!!!!!</div>\n\nexport default MyComponent;"],"sourceRoot":""}
